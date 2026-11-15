@@ -1,0 +1,54 @@
+env:
+  contexts:
+    - name: proxy-http
+      urls:
+        - http://proxy/http/
+      includePaths:
+        - ^http://proxy/http/.*$
+
+    - name: web-http
+      urls:
+        - http://web/
+      includePaths:
+        - ^http://web/.*$
+
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    continueOnFailure: false
+    progressToStdout: true
+
+jobs:
+  - type: spider
+    parameters:
+      context: proxy-http
+      url: http://proxy/http/
+
+  - type: passiveScan-wait
+
+  - type: activeScan
+    parameters:
+      context: proxy-http
+      url: http://proxy/http/
+
+  - type: spider
+    parameters:
+      context: web-http
+      url: http://web/
+
+  - type: passiveScan-wait
+
+  - type: activeScan
+    parameters:
+      context: web-http
+      url: http://web/
+
+  - type: report
+    parameters:
+      template: traditional-json
+      reportDir: /zap/wrk
+      reportFile: zap-http-report.json
+      reportTitle: ZAP HTTP Report
+    sites:
+      - http://proxy/http/
+      - http://web/

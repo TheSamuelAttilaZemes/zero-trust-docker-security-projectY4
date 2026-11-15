@@ -1,0 +1,224 @@
+services:
+  waf:
+    image: owasp/modsecurity-crs:nginx
+    container_name: owasp-waf
+    depends_on:
+      - proxy
+    environment:
+      BACKEND: "https://proxy:443/https/"
+      SERVER_NAME: "localhost"
+      SSL_PORT: "8443"
+      MODSEC_RULE_ENGINE: "On"
+      MODSEC_AUDIT_ENGINE: "On"
+      MODSEC_AUDIT_LOG: "/var/log/modsecurity/audit.log"
+      MODSEC_AUDIT_LOG_FORMAT: "JSON"
+    ports:
+      - "443:8443"
+    volumes:
+      - ./certs/localhost.crt:/etc/nginx/conf/server.crt:ro
+      - ./certs/localhost.key:/etc/nginx/conf/server.key:ro
+      - ./siem/logs/waf:/var/log/modsecurity
+    networks:
+      app:
+        ipv4_address: 172.30.0.10
+
+  proxy:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+      - "8444:443"
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs/localhost.crt:/etc/nginx/certs/localhost.crt:ro
+      - ./certs/localhost.key:/etc/nginx/certs/localhost.key:ro
+      - ./certs/localCA.crt:/etc/nginx/certs/localCA.crt:ro
+      - ./siem/logs/proxy:/var/log/nginx
+    networks:
+      app:
+        ipv4_address: 172.30.0.20
+
+  web:
+    image: nginx:alpine
+    container_name: nginx-web
+    volumes:
+      - ./web/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./web/html:/usr/share/nginx/html:ro
+      - ./certs/localhost.crt:/etc/nginx/certs/localhost.crt:ro
+      - ./certs/localhost.key:/etc/nginx/certs/localhost.key:ro
+      - ./siem/logs/web:/var/log/nginx
+    networks:
+      app:
+        ipv4_address: 172.30.0.30
+
+  tshark_proxy:
+    build: ./tshark
+    container_name: tshark-proxy
+    network_mode: "service:proxy"
+    depends_on:
+      - proxy
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    user: "0:0"
+    volumes:
+      - ./captures:/captures
+    command: ["tshark", "-l", "-i", "any", "-f", "tcp port 80 or tcp port 443", "-P", "-w", "/captures/proxy-both.pcapng"]
+
+  tshark_waf:
+    build: ./tshark
+    container_name: tshark-waf
+    network_mode: "service:waf"
+    depends_on:
+      - waf
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    user: "0:0"
+    volumes:
+      - ./captures:/captures
+    command: ["tshark", "-l", "-i", "any", "-f", "tcp port 8443", "-P", "-w", "/captures/waf-https.pcapng"]
+
+  tshark_web:
+    build: ./tshark
+    container_name: tshark-web
+    network_mode: "service:web"
+    depends_on:
+      - web
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    user: "0:0"
+    volumes:
+      - ./captures:/captures
+    command: ["tshark", "-l", "-i", "any", "-f", "tcp port 80 or tcp port 443", "-P", "-w", "/captures/web-both.pcapng"]
+
+  zap_http:
+    image: zaproxy/zap-stable
+    container_name: zap-scan-http
+    profiles: ["zap"]
+    depends_on:
+      - proxy
+      - web
+    working_dir: /zap/wrk
+    volumes:
+      - ./zap-reports:/zap/wrk:rw
+    command:
+      - zap.sh
+      - -cmd
+      - -autorun
+      - /zap/wrk/zap-http.yaml
+    networks:
+      - app
+    restart: "no"
+
+  zap_https:
+    image: zaproxy/zap-stable
+    container_name: zap-scan-https
+    profiles: ["zap"]
+    depends_on:
+      - waf
+      - proxy
+      - web
+    working_dir: /zap/wrk
+    volumes:
+      - ./zap-reports:/zap/wrk:rw
+    command:
+      - zap.sh
+      - -cmd
+      - -autorun
+      - /zap/wrk/zap-https.yaml
+    networks:
+      - app
+    restart: "no"
+
+  hping:
+    build: ./hping
+    container_name: hping3-client
+    depends_on:
+      - waf
+      - proxy
+      - web
+    networks:
+      - app
+    cap_add:
+      - NET_RAW
+    user: "0:0"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./siem/logs/hping:/logs/hping
+      - ./siem/scripts/hping-run.sh:/usr/local/bin/hping-run.sh:ro
+    command: ["sleep", "infinity"]
+
+  opensearch-node:
+    image: opensearchproject/opensearch:3.6.0   
+    container_name: zta-opensearch
+    profiles: ["siem"]
+    environment:
+      - cluster.name=zta-siem
+      - node.name=zta-opensearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true # Enable memory locking to prevent swapping and improve performance
+      - OPENSEARCH_JAVA_OPTS=-Xms768m -Xmx768m # Set Java VM options to limit memory usage for OpenSearch
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+      - DISABLE_SECURITY_PLUGIN=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    networks:
+      - app
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:3.6.0
+    container_name: zta-opensearch-dashboards
+    profiles: ["siem"]
+    depends_on:
+      - opensearch-node
+    ports:
+      - "5601:5601"
+    environment:
+      - OPENSEARCH_HOSTS=["http://opensearch-node:9200"]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+    networks:
+      - app
+
+  fluent-bit:
+    image: fluent/fluent-bit:4.2.4-amd64
+    container_name: zta-fluent-bit
+    profiles: ["siem"]
+    depends_on:
+      - opensearch-node
+      - proxy
+      - web
+      - waf
+    volumes:
+      - ./siem/fluent-bit/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
+      - ./siem/logs:/logs:ro
+      - ./zap-reports:/zap-reports:ro
+      - ./siem/state:/fluent-bit/state
+    command: ["/fluent-bit/bin/fluent-bit", "-c", "/fluent-bit/etc/fluent-bit.conf"]
+    networks:
+      - app
+
+volumes:
+  opensearch-data:
+
+networks:
+  app:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1

@@ -1,0 +1,259 @@
+/* General Style Across The Site */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f7;
+  color: #212529;
+}
+
+/* Main Page Background With The Background Image Setup*/
+.page-background {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(245, 245, 247, 0.92), rgba(245, 245, 247, 0.664)),
+    url("../images/BABackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* ensuring that image stays locked while scrolling */
+}
+
+/* Transparency set on ligher vissble sections */
+.page-background .bg-light {
+  background-color: rgba(248, 249, 250, 0.85);
+}
+
+/* Reusable top/bottom spacing for each section */
+.section-spacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Core Styling for all main section */
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Hero Section - Top Side of The Banner */
+.hero-header {
+  position: relative;
+  color: #ffffff;
+  background-image:
+    linear-gradient(rgba(5, 10, 25, 0.8), rgba(5, 10, 25, 0.85)),
+    url("../images/BA Background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Spacing Wrapper For Hero Overlay */
+.hero-overlay-wrapper {
+  background: transparent;
+}
+
+/* Layout container for the hero content */
+.hero-layout {
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+}
+
+/* Hero portrait image */
+.hero-portrait {
+  width: 220px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Extra padding for the top navbar */
+.navbar {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Logo Setup in the navbar */
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  margin-right: 25px;
+  object-fit: contain;  
+  display: block;
+}
+/* EDUCATION SECTION */
+
+/* Text Block Setup and Alignment on Center for Education Section */
+.education-entry {
+  margin-bottom: 1.75rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pyramid structuring of each education entry – currently not working as intended */
+@media (min-width: 992px) {
+  /* Custom layout and max-width of education entries for a pyramid effect */
+  #education .col-lg-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #education .education-entry:nth-of-type(1) {
+    max-width: 480px;        /* top of the pyramid */
+  }
+  #education .education-entry:nth-of-type(2) {
+    max-width: 560px;
+  }
+  #education .education-entry:nth-of-type(3) {
+    max-width: 640px;        /* base of the pyramid */
+  }
+}
+/* Font and Margin Setup for Each Education Entry*/
+.education-entry h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Code output from AWS Lambda Section */
+
+/* Styling for displaying JSON output from API/Lambda Gateway */
+.code-output-box {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  max-height: 320px;
+  overflow: auto;
+  font-family: "SF Mono", Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+}
+
+/* Skills Section*/
+
+/* Two-column list for skill in <li> */
+.skills-two-column {
+  list-style: none;
+  padding-left: 80px;
+  margin: 0 auto;                 
+  max-width: 600px;               
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));  
+  column-gap: 3rem;               
+  row-gap: 0.5rem;               
+}
+
+/* Black bullet point for each skill item */
+.skills-two-column li::before {
+  content: "• ";
+  color: #000000;
+}
+
+/* Hobbies and Certification Card Section Layout */
+
+/* Card Styling for the Hobbies and Cert Section */
+.interest-card {
+  border-radius: 1.5rem;
+  padding: 2rem 2rem 1.75rem;
+  min-height: 420px;
+  overflow: hidden;                
+}
+
+/* Image Styling inside the Card */
+.interest-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  max-height: 230px;
+  object-fit: contain;
+  border-radius: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;   
+}
+
+/* Grow/shrink interaction for the Cards */
+@media (min-width: 768px) {
+
+  /* Row flex container */
+  .interest-row {
+    display: flex;
+  }
+
+  /* Setup for Bootstrap columns to be flexible card container with transisions animation */
+  .interest-row > .col-md-4 {
+    display: flex;
+    flex: 1;
+    transition: flex 0.3s ease;
+  }
+
+  .interest-row > .col-md-4 .interest-card {
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hower Card Flex Increase */
+  .interest-row > .col-md-4:hover {
+    flex: 1.4;
+  }
+  /* Text and Image Grow inside while mouse is howering about the card */
+  .interest-row > .col-md-4:hover .interest-card {
+    transform: scale(1.08);  
+    box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.15);
+  }
+
+  /* Image scaling allign with the Card Scalling */
+  .interest-row > .col-md-4:hover .interest-image {
+    transform: none;
+  }
+
+  /* Decrease Cards whre the mouse is not howering */
+  .interest-row > .col-md-4:not(:hover) {
+    flex: 0.8;
+  }
+}
+/* Logo CSS Setup in the Contact Me card */
+.contact-logo {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 1rem;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.35));
+}
+
+/* Footer Section */
+
+.page-footer {
+  background-color: #0b1724;
+  color: #f8f9fa;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustment for Smaller Screens */
+
+@media (max-width: 767.98px) {
+  /* Reduce top/bottom space in hero on small screens */
+  .hero-layout {
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Smaller hero portrait for mobile */
+  .hero-portrait {
+    width: 180px;
+    height: 260px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Skills list switches to single column on small screens */
+  .skills-two-column {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    text-align: center;
+  }
+}

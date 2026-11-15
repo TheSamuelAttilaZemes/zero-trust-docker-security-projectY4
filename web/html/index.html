@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Samuel Attila Zemes - Cloud Computing Portfolio</title>
+
+    <!-- Bootstrap 5 official Refference -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+    <!-- CSS Style Sheet Link -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--Favicon Link-->
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+  </head>
+
+  <!-- Scrollspy Bootstrap Active Menu  -->
+  <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-smooth-scroll="true">
+
+    <!-- HERO Header Section -->
+    <header class="hero-header" id="hero">
+      <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+          <a class="navbar-brand fw-semibold d-flex align-items-center" href="#hero">
+            <img src="images/Pure Logo.png"
+              alt="SAZ logo"
+              class="brand-logo">
+            <span class="ms-2">Samuel Attila Zemes</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+              <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Bootstrap Image Setup and Layout  -->
+      <div class="hero-overlay-wrapper">
+        <div class="container hero-layout">
+          <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+              <img src="images/me.jpg"
+                   alt="Image Portrait that display the author image. Name of the author is Samuel Attila Zemes"
+                   class="hero-portrait img-fluid shadow">
+            </div>
+
+            <!-- Introduction Header , Text Next to the Hero Image -->
+            <div class="col-md-8 text-white">
+              <p class="text-uppercase small mb-1">Cloud Computing Student</p>
+              <h1 class="display-5 fw-semibold mb-3">Samuel Attila Zemes</h1>
+              <p class="lead mb-3">
+                Cloud Computing student with a strong focus on networking and cloud solutions
+                and problem solving, building on a Level 7 degree in Computing and expanding to the cloud and security structures
+              </p>
+              <p class="mb-3 small">
+                Currently studying:
+                <strong>BSc (Honours) in Cloud Computing – Level 8, Technological University of Dublin</strong>.
+              </p>
+              <p class="mb-4 small">
+                Today I&apos;m focusing on:
+                <span id="current-focus" class="fw-semibold"></span>
+              </p>
+
+              <!-- Headers Buttons for Download CV and displaying the Contact info -->
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#contact" class="btn btn-primary">
+                  Contact Me
+                </a>
+                <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  View Contact Details
+                </button>
+                <a href="files/Samuel_Attila_Zemes_CV3.pdf" class="btn btn-outline-light" target="_blank">
+                  Download CV (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Initial  Main Background With Image for the Site -->
+    <main class="page-background" id="main-content">
+
+      <!-- About Me Porfolio Section for Introduction -->
+      <section id="about" class="section-spacing bg-light">
+        <div class="container">
+          <h2 class="section-heading">About Me</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <p>
+               I am Fourth-year BSc (Hons) Cloud Computing student with a Bc. in Computing and
+                strong focus on networking and cloud technologies. Experienced with network solutions, 
+                troubleshooting and problem-solving, supported by voluntary mentoring and leadership experience. 
+                Aiming to build a career in cloud computing and security. 
+                Seeking an IT role where I can apply my networking and cloud skills, and expand my already build theory knowladge to practise.
+              </p>
+              <p class="mb-0">
+                I enjoy solving complex technical problems, designing secure cloud solutions.
+                This site showcases my education, projects, experience,
+                and technical skills in a professional, employment-ready format.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section-spacing">
+        <div class="container">
+          <h2 class="section-heading">Education</h2>
+          <div class="row justify-content-center">
+            <!-- Use of Bootstrap col-lg-10 that allows education section entries to be narrower on large screens -->
+            <div class="col-lg-10">
+              <div class="education-entry">
+                <h3>Technological University of Dublin</h3>
+                <p class="mb-1"><strong>BSc (Honours) in Cloud Computing – Level 8</strong></p>
+                <p class="text-muted small mb-0">Dublin, Ireland</p>
+              </div>
+
+              <div class="education-entry">
+                <h3>Dundalk Institute of Technology</h3>
+                <p class="mb-1"><strong>BSc in Computing – Network Stream – Level 7</strong></p>
+                <p class="text-muted small mb-1">Graduated with Distinction</p>
+                <p class="text-muted small mb-0">Dundalk, Ireland</p>
+              </div>
+
+              <div class="education-entry">
+                <h3>Private Secondary Vocational School of Polytechnics in Nitra</h3>
+                <p class="mb-1"><strong>Mechanics – Mechatronics</strong></p>
+                <p class="text-muted small mb-0">Nitra, Slovakia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Section -->
+      <section id="projects" class="section-spacing bg-light">
+        <div class="container">
+          <h2 class="section-heading">Projects</h2>
+
+          <!-- Using Bootstrap row to formant two-card row for two project  -->
+          <div class="row g-4">
+
+            <!-- Project Py.py card -->
+            <div class="col-md-6">
+              <div class="card project-card h-100">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Project Py.py - Host &amp; System Information Script</h3>
+                  <p class="card-text">
+                    A Python script that gathers host information (CPU, RAM, disk, OS details),
+                    performs ping tests, and can export system data into a CSV report. Designed
+                    for basic diagnostics and infrastructure lab work.<br> 
+                    Details of the script:
+                  </p>
+                  <ul class="small mb-3">
+                    <li>Collects host details using standard Python libraries and psutil.</li>
+                    <li>Retrieves OS, hardware and user information (CPU, RAM, disks, username and directories).</li>
+                    <li>Performs ping tests against the local host to verify connectivity.</li>
+                    <li>Displays an interactive text menu so the user can select tests and reports.</li>
+                    <li>Logs high-level CPU and memory utilisation statistics.</li>
+                    <li>Exports all collected data to <code>SystemInfo.csv</code> for reporting and later analysis.</li>
+                    <li>Organises the output values from the test either into the CLI or to the CSV format that can be later reviewed through Excel</li>
+                    <li>Designed to be easily extended with additional checks, like port or service tests.</li>
+                    <li>The design of the Python script can be restructured based on the needs to either perform offensive or defensive tasks</li>
+                    <li>The edited version of python code was deployed on AWS Lambda and can be tested through the AWS API Gateway.</li>
+                    <li>Displayed code is provided as contribution to the open-source python code community</li>
+                  </ul>
+
+                  <div class="mt-auto">
+                    <!-- Div Section for 2 Buttons that allows to view and download the python script" -->
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <button class="btn btn-sm btn-primary"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#pythonCodeModal">
+                        View Python source code
+                      </button>
+                      <a href="files/PythonCa.py"
+                         class="btn btn-sm btn-outline-secondary"
+                         download>
+                        Download Project Py.py
+                      </a>
+                    </div>
+
+                    <p id="lambda-status" class="small text-muted mb-1">
+                      Optional: connect this section to an AWS Lambda health-check API.
+                    </p>
+                    <button id="lambda-button" class="btn btn-sm btn-outline-secondary" type="button">
+                      Run Lambda Health Check
+                    </button>
+
+                    <!-- AWS Lambda response box -->
+                    <pre id="lambda-output" class="code-output-box mt-2 small"></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Visualisation Project card -->
+            <div class="col-md-6">
+              <div class="card project-card h-100">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">
+                    Data Visualisation – World Happiness &amp; Quality of Life Dashboard
+                  </h3>
+                  <p class="card-text">
+                    This Tableau dashboard compares quality-of-life indicators across countries using data from the World Happiness Report.  
+                    The dashboard analyses how various factors influence happiness and social well-being, using visualisations as the primary comparison tool. 
+                    Additionally, we utilise the seven stages of data visualisation practices throughout the analysis. to comply with set standards <br>
+                    Dashboard desing includes:
+                  </p>
+                  <ul class="small mb-3">
+                    <li>Calculated fields for emotional well-being, corruption, and other indicators that have a clear impact on the quality of life.</li>
+                    <li>The dashboard filters allows user to select specific years and countries for tailored data visualizations in the given year.</li>
+                    <li>Enables forecasting and reviewing public awareness of corruption using trend lines, determining whether awareness is increasing or decreasing.</li>
+                  </ul>
+
+                  <div class="mt-auto">
+                    <!-- Workbook and documentation download buttons -->
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <a href="files/DataAnalysisCA1Finnal.twb"
+                         class="btn btn-sm btn-primary"
+                         download>
+                        Download Tableau Workbook
+                      </a>
+                      <a href="files/CA1VisualizationFinnal.docx"
+                         class="btn btn-sm btn-outline-secondary"
+                         download>
+                        Download Documentation (Word)
+                      </a>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <h4 class="h6 mb-2">Download CSV data used in this project</h4>
+
+                    <!-- Raw CSVs File group section -->
+                    <p class="small mb-1">Raw World Happiness datasets (unfiltered):</p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <a href="data/World-happiness-report-2024.csv"
+                         class="btn btn-sm btn-outline-secondary"
+                         download>
+                        World-happiness-report-2024.csv
+                      </a>
+                      <a href="data/World-happiness-report-updated_2024.csv"
+                         class="btn btn-sm btn-outline-secondary"
+                         download>
+                        World-happiness-report-updated_2024.csv
+                      </a>
+                    </div>
+
+                    <!-- Filtered CSVs output group section -->
+                    <p class="small mb-1">Filtered / processed CSV outputs used in Tableau:</p>
+                    <div class="d-flex flex-wrap gap-2 mb-2">
+                      <a href="data/Test.csv"
+                         class="btn btn-sm btn-outline-secondary"
+                         download>
+                        Test.csv
+                      </a>
+                      <a href="data/OutputTest.csv"
+                         class="btn btn-sm btn-outline-secondary"
+                         download>
+                        OutputTest.csv
+                      </a>
+                    </div>
+
+                    <p class="small text-muted mb-0">
+                      The raw datasets contain the original World Happiness data, while the
+                      filtered CSV files hold the cleaned and transformed data used directly
+                      in the Tableau visualisations and analysis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> 
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section-spacing">
+        <div class="container">
+          <h2 class="section-heading">Experience</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <!-- Python tutoring card DIV section-->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h3 class="h5 mb-1">Volunteer Tutor of Python</h3>
+                  <p class="text-muted small mb-2">Dundalk Institute of Technology</p>
+                  <ul class="mb-0">
+                    <li>Mentored students in Python, helping them understand core programming concepts.</li>
+                    <li>Guided students through problem solving and small projects.</li>
+                    <li>Encouraged experimentation and critical thinking to build confidence.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Brand ambassador card DIV section -->
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="h5 mb-1">Brand Ambassador</h3>
+                  <p class="text-muted small mb-2">Raiffeisen Bank – Bratislava</p>
+                  <ul class="mb-0">
+                    <li>Represented the brand at events and engaged with customers to promote services.</li>
+                    <li>Communicated technical and financial information clearly to a non-technical audience.</li>
+                    <li>Developed strong communication and interpersonal skills in a professional setting.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SKILLS SECTION ===== -->
+      <section id="skills" class="section-spacing bg-light">
+        <div class="container">
+          <h2 class="section-heading">Skills</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <!-- Two-column list of key skills -->
+              <ul class="skills-two-column">
+                <li>Network Design</li>
+                <li>Problem Solving</li>
+                <li>Cloud Solutions</li>
+                <li>Mentoring Skills</li>
+                <li>Communication</li>
+                <li>Flexibility</li>
+                <li>Teamwork</li>
+                <li>Technical Writing</li>
+                <li>GitHub</li>
+                <li>Python Programming</li>
+                <li>Tableau Data Visualisation Software</li>
+                <li>Knowladge of AWS and Azure cloud platforms</li>
+                <li>Azure Piplelines and DevOps</li>
+                <li>Cisco Switches and Routers</li>
+              </ul>
+            </div>
+          </div>
+          </div> <!-- .container -->
+      </section>
+
+              <!-- References -->
+              <!-- Referrals -->
+        <section id="referrals" class="section-spacing">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Bordered box: white text + visible background image around it -->
+                <div class="border border-2 border-light rounded p-4 bg-dark bg-opacity-50 text-white shadow-sm">
+            <h2 class="section-heading text-white mb-3">Academic and Profesional Referrals</h2>
+
+            <p>
+              I am pleased to provide this reference for Samuel Zemes who has volunteered as a mentor with our DkIT CoderDojo club over the last number of years.
+              Throughout his time with us, Samuel demonstrated maturity, technical ability, and a genuine commitment to supporting younger learners aged between 7 and 17 years in developing their confidence with computing.
+              As a mentor, Samuel consistently showed patience, clarity, and enthusiasm when guiding our ninjas through the monthly coding challenges. He supported students working with various technologies including Scratch,
+              HTML/CSS, and introductory Python with micro:bit, always ensuring that each youth felt encouraged and capable. His ability to break down complex ideas into simple, approachable steps made him an invaluable presence at our sessions.
+              Whether helping a nervous beginner debug their first animation or offering thoughtful suggestions to more advanced students, he adapted his approach to meet each learner’s needs.
+              He also contributed to the positive, inclusive atmosphere that CoderDojo values so highly, modelling teamwork, curiosity, and respect.
+            </p>
+
+            <p class="mb-0">
+              Samuel has been reliable, punctual, and proactive throughout his voluntary work. He quickly became someone we could depend on to help set up sessions, support learners, and contribute ideas for improving activities. His attitude and work ethic reflect a young person with strong potential and a genuine interest in technology and community engagement.
+              I have no hesitation in recommending Samuel Zemes for future opportunities in education, technology, or any role that values communication, responsibility, and problem-solving. He would be an asset to any team.
+              If further information is required, I would be happy to provide it.
+              <br><br>
+              <strong>
+                Kind regards,<br>
+                Peter<br>
+                Champion DkIT CoderDojo
+              </strong>
+            </p>
+
+            <!-- Buttons: no modal, direct PDF view/download -->
+            <div class="d-flex flex-wrap gap-2 justify-content-center mt-3">
+              <a class="btn btn-outline-light" href="files/Reference1.pdf" target="_blank" rel="noopener">
+                View the original (PDF)
+              </a>
+            </div>
+                </div> <!-- .border -->
+              </div> <!-- .col-lg-8 -->
+            </div> <!-- .row -->
+          </div> <!-- .container -->
+        </section>
+
+              <!-- Certifications Section -->
+        <section id="certifications" class="section-spacing">
+          <div class="container">
+            <h2 class="section-heading">Planned Certification Path</h2>
+            <p class="text-center small mb-4">
+              These are the certifications I am planning to undertake to deepen my skills
+              in cloud security and penetration testing. They are part of my medium- to
+              long-term learning roadmap.
+            </p>
+
+          <!-- Start of the Cert Card Section -->
+          <div class="row g-4 justify-content-center interest-row">
+            <!-- HTB CPTS Cert -->
+            <div class="col-md-4">
+              <div class="card interest-card h-100 text-center">
+                <div class="card-body">
+                  <h3 class="h5">HTB Certified Penetration Testing Specialist (CPTS)</h3>
+                  <img src="images/plan2.png"
+                       alt="Hack The Box CPTS certification artwork"
+                       class="interest-image mb-3">
+                  <p class="small mb-0">
+                    The CPTS certification is an advanced for individuals who have completed the CJCA certification or a similar certification. 
+                    The curriculum covers key areas such as risk assessment, vulnerability exploitation, and professional penetration testing report writing.
+                    The primary goal of the CPTS certification is to provide practical experience that builds intermediate penetration testing skills through real-world scenario simulations. 
+                    Earning the CPTS certification enables individuals to conduct penetration tests effectively and enhances their cybersecurity capabilities.
+                </div>
+              </div>
+            </div>
+            <!-- AWS Cloud Security Engineer -->
+            <div class="col-md-4">
+              <div class="card interest-card h-100 text-center">
+                <div class="card-body">
+                  <h3 class="h5">AWS Cloud Security Engineer Track</h3>
+                  <img src="images/plan3.png"
+                       alt="AWS cloud security engineer certification path"
+                       class="interest-image mb-3">
+                  <p class="small mb-0">
+                    The planned AWS certification path for a cloud security engineer role begins with the Cloud Practitioner and SysOps Administrator certifications. 
+                    These provide a solid foundation in the AWS environment, focusing on its operations and management. 
+                    Next, obtaining a Security Certification showcases the holder's understanding of security standards and their ability to design, implement, and manage secure AWS environments. 
+                    This ensures the protection of cloud systems, data, and applications from potential threats. 
+                    Finally, pursuing the DevOps Engineer Professional and Advanced Networking Speciality certifications allows individuals to design and automate highly scalable applications while building and optimising complex, secure network architectures across AWS and hybrid environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- HTB CJCA -->
+            <div class="col-md-4">
+              <div class="card interest-card h-100 text-center">
+                <div class="card-body">
+                  <h3 class="h5">HTB Certified Junior Cybersecurity Associate (CJCA)</h3>
+                  <img src="images/plan1.png"
+                       alt="Hack The Box CJCA certification artwork"
+                       class="interest-image mb-3">
+                  <p class="small mb-0">
+                    CJCA is an entry-level cybersecurity certification that helps holders obtain a junior level skill set in Security Operations Center (SOC) and offensive skills. 
+                    This certification serves as a foundation for pursuing future cybersecurity credentials. 
+                    The plan is to complete this certification while building a solid foundation at Dundalk Institute of Technology, which focuses on networking. 
+                    Additionally, it will enhance skill sets in vulnerability assessment, SIEM-assisted monitoring, and defensive security operations within enterprise environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hobbies Section -->
+      <section id="hobbies" class="section-spacing">
+        <div class="container">
+          <h2 class="section-heading">Hobbies &amp; Interests</h2>
+          <div class="row g-4 justify-content-center interest-row">
+            <!-- Dungeons & Dragons Div Section -->
+            <div class="col-md-4">
+              <div class="card interest-card h-100 text-center">
+                <div class="card-body">
+                  <h3 class="h5">Dungeons &amp; Dragons</h3>
+                  <img src="images/dnd.jpg"
+                       alt="Dungeons &amp; Dragons party artwork"
+                       class="interest-image mb-3">
+                  <p class="small mb-0">
+                    Dungeons & Dragons is a captivating blend of storytelling, strategy, and collaboration, where a group of players creates their own fictional characters and navigates a rich world crafted by the Dungeon Master. 
+                    This immersive game requires problem-solving, effective communication, and teamwork, as players work together to overcome challenges and achieve their goals. 
+                    With each session, participants embark on unique adventures filled with excitement, creativity, and shared experiences that strengthen their bonds as a group.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- My Dogs Div Section -->
+            <div class="col-md-4">
+              <div class="card interest-card h-100 text-center">
+                <div class="card-body">
+                  <h3 class="h5">My Dog</h3>
+                  <img src="images/JaMonty.jpg"
+                       alt="Dog named Monty"
+                       class="interest-image mb-3">
+                  <p class="small mb-0">
+                    Since childhood, I have grown up with dogs in both the city and the countryside. 
+                    My dog Monty have given me beautiful memories and taught me patience, as well as the art of bribery with treats to encourage learning. 
+                    Each dog that my family owned had its own unique personality, and that was the beauty of it.
+                    I would definitely classify the saying "a dog is a man's best friend" as true.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Motorcycle Div Section-->
+            <div class="col-md-4">
+              <div class="card interest-card h-100 text-center">
+                <div class="card-body">
+                  <h3 class="h5">Motorcycles</h3>
+                  <img src="images/motorcycle.jpg"
+                       alt="Motorcycles"
+                       class="interest-image mb-3">
+                  <p class="small mb-0">
+                    My motorcycle obsession began in my early adulthood. 
+                    Riding a motorcycle provides an excellent opportunity for me to connect with others who share the same interest in these beautiful machines. 
+                    When I'm on the road, I always feel a sense of freedom surrounding me. 
+                    My mind focuses on what's in front of me, which allows me to clear my head. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <!-- Contact Information Section -->
+<section id="contact" class="section-spacing bg-light">
+    <div class="container">
+      <h2 class="section-heading">Contact Me</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-body">
+
+                <div class="row align-items-start">
+                <!-- LEFT: contact text -->
+                    <div class="col-md-8">
+                      <p class="mb-3">
+                        You can reach me using the contact details below.
+                      </p>
+
+                      <!-- Static contact Information / Outside of Modal  -->
+                      <ul class="list-unstyled mb-4">
+                      <li><strong>Name:</strong> Samuel Attila Zemes</li>
+                      <li><strong>Location:</strong> Dublin, Ireland / Bratislava , Slovakia</li>
+                      <li><strong>Email:</strong> <a href="mailto:email@example.com">email@example.com</a></li>
+                      <li><strong>Phone:</strong> [phone removed] / [phone removed]</li>
+                      <li><strong>LinkedIn:</strong>
+                      <a href="https://www.linkedin.com/in/samuel-zemes-736a62228" target="_blank">
+                        linkedin.com/in/samuel-zemes-736a62228
+                      </a>
+                      </li>
+                      </ul>
+
+                    <!-- Button Section for Display of Modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+                      Open Contact Details 
+                    </button>
+                    <p class="small text-muted mt-3 mb-0">
+                      The button above provides an additional links and view of the same information.
+                    </p>
+                    </div>
+
+                    <!-- logo -->
+                    <div class="col-md-4 text-center text-md-end mt-4 mt-md-0">
+                      <img src="images/Pure Logo1.png"
+                       alt="SAZ logo – Samuel Attila Zemes"
+                       class="contact-logo">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+    </main>
+
+    <!-- Contact Infomration Inside the Interactive Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contact Details – Samuel Attila Zemes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><strong>Email:</strong>
+              <a href="mailto:email@example.com">email@example.com</a>
+            </p>
+            <p class="mb-2"><strong>Phone:</strong> [phone removed] / [phone removed]</p>
+            <p class="mb-2"><strong>Location:</strong> Dublin, Ireland / Bratislava, Slovakia</p>
+            <p class="mb-2"><strong>LinkedIn:</strong><br>
+              <a href="https://www.linkedin.com/in/samuel-zemes-736a62228" target="_blank">
+                linkedin.com/in/samuel-zemes-736a62228
+              </a>
+            </p>
+            <p class="mb-2"><strong>GitHub:</strong><br>
+              <a href="https://github.com/TheSamuelAttilaZemes" target="_blank">
+                github.com/TheSamuelAttilaZemes
+              </a>
+            </p>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Python Code Showcase Modal using code background -->
+    <div class="modal fade" id="pythonCodeModal" tabindex="-1" aria-labelledby="pythonCodeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pythonCodeModalLabel">Project Py.py - Full Source Code</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+<pre class="code-output-box small mb-0"><code># Project Py.py - System Information and Ping Utility
+
+import csv
+import socket
+import platform
+import os
+import sys
+import psutil
+
+# Function to get the host's IP address
+def Host ():
+    global hostname  # Declaring 'hostname' as global
+    hostname = platform.node()
+    print(hostname)
+    IPaddress = socket.gethostbyname(hostname)
+    print(IPaddress)
+    return IPaddress
+
+# Function to perform a ping test and provide user interaction
+def PingTest ():
+    Get_IP = Host()
+    while True:
+        ping = os.system('ping ' + Get_IP )
+        if ping  :
+            print(f'{hostname} is down')
+        else :
+            print(f'{hostname} is up')
+        #user decision
+        print('If you wish to continue in Test please YES or NO')
+        userInput = input()
+        if userInput == 'NO':
+            print('Do you wish to go to main menu ? ')
+            x = input('YES or NO ? : ')
+            if x == 'YES':
+                print('You will be returned to the main menu.')
+                MainMenu()
+            elif x == 'NO':
+                print('Thank you and enjoy your day. The script is ending.')
+                sys.exit()
+            else:
+                print('Invalid input')
+        elif userInput == 'YES':
+            continue
+        else:
+            print('Invalid Response : Code will continue')
+            continue
+
+# Function to collect host information
+def PassingHostInfo ():
+    HostInfo = {
+        'username': os.getlogin(),
+        'system': platform.uname().system,
+        'Node Name': platform.uname().node,
+        'Release': platform.uname().release,
+        'Version': platform.uname().version,
+        'Machine': platform.uname().machine,
+        'Processor': platform.processor(),
+        'userDirectory': os.path.expanduser('~'),
+        'Physical cores': psutil.cpu_count(logical=False),
+        'Total cores': psutil.cpu_count(logical=True),
+        'cpufre': psutil.cpu_freq(),
+        'Max Frequency': int(psutil.cpu_freq().max / 1000000),
+        'Min Frequency': int(psutil.cpu_freq().min / 1000000),
+        'Current Frequency': int(psutil.cpu_freq().current / 1000000),
+        'Total CPU Usage': psutil.cpu_percent(),
+        'svmem': psutil.virtual_memory(),
+        # Ram
+        'Total Memory': int(psutil.virtual_memory().total / (1024 ** 3)),
+        'Available Memory': int(psutil.virtual_memory().available / (1024 ** 3)),
+        'Used Memory': int(psutil.virtual_memory().used / (1024 ** 3)),
+        'Memory Percentage': psutil.virtual_memory().percent,
+        'swap': psutil.swap_memory(),
+        'Swap Percentage': psutil.swap_memory().percent,
+        # Disk Information
+        'partitions': psutil.disk_partitions(),
+        'AllPartitions': f"{int(psutil.disk_usage('C:').total / (1024 ** 3))} GB"
+    }
+    return HostInfo
+
+# Function to print all collected host information
+def PritingAllHostInfo (HostInfo):
+    for key, value in HostInfo.items():
+        print(f'{key}: {value}')
+    print('Do you wish to go to main menu ? ')
+    x=input('YES or NO ? : ')
+    if x == 'YES':
+        print('You will be returned to the main menu.')
+        MainMenu()
+    elif x == 'NO':
+        print('Thank you and enjoy your day. The script is ending.')
+        sys.exit()
+    else:
+        print('Invalid input')
+
+
+# Function to print host information to a CSV file
+def CsvPrint (information):
+    with open('SystemInfo.csv',mode='w') as csv_file:
+        csv_writer = csv.writer(csv_file,delimiter=',')
+        line_count = 0
+        for key , value in information.items():
+            csv_writer.writerow([key,value])
+            line_count += 1
+    print('Task done')
+    print('Do you wish to go to main menu ? ')
+    x = input('YES or NO ? : ')
+    if x == 'YES':
+        print('You will be returned to the main menu.')
+        MainMenu()
+    elif x == 'NO':
+        print('Thank you and enjoy your day. The script is ending.')
+        sys.exit()
+    else:
+        print('Invalid input')
+
+# Function to display the main menu
+def MainMenu ():
+    #Main interface for the user
+    print('Welcome in the script please choose the would you like to start')
+    for i in range(4):
+        x = input('Please Enter :Ping Test, Exit , All Information , CSV Report : ')
+        if x == 'Ping Test':
+            PingTest()
+            print('Task done')
+
+        elif x == 'All Information':
+            holderr = PassingHostInfo()
+            PritingAllHostInfo(holderr)
+            print('Task done')
+
+        elif x == 'Exit':
+            print('Script is finneshed. Have nice rest of day')
+            sys.exit()
+        elif x == 'CSV Report':
+            holder = PassingHostInfo()
+            CsvPrint(holder)
+            print('Task done')
+
+        else :
+            print(f'Invalid input, attempts {i}')
+            print(f'Warning there 3 attempts available and now you have {3-i} ')
+
+
+MainMenu()</code></pre>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="page-footer">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-1 mb-md-0">
+          &copy; <span id="current-year"></span> Samuel Attila Zemes. All rights reserved.
+        </p>
+        <p class="small mb-0">
+          Built with Bootstrap 5 and hosted as a static website.
+          <span class="d-block d-md-inline ms-md-2">Today: <span id="current-date"></span></span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Link Init -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Simple custom JavaScript for dynamic content (year, date, Lambda output, rotating focus text) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Dynamic current year in footer
+        var yearSpan = document.getElementById("current-year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Dynamic current date in footer (changes every day)
+        var dateSpan = document.getElementById("current-date");
+        if (dateSpan) {
+          var today = new Date();
+          var options = { year: "numeric", month: "long", day: "numeric" };
+          dateSpan.textContent = today.toLocaleDateString(undefined, options);
+        }
+
+        // Simple dynamic focus text in the hero section
+        var focusSpan = document.getElementById("current-focus");
+        if (focusSpan) {
+          var topics = [
+            "Azure and AWS cloud architectures",
+            "Zero Trust and modern security models",
+            "Python automation and scripting",
+            "Data visualisation and dashboards",
+            "CI/CD and DevOps practices"
+          ];
+          var randomTopic = topics[Math.floor(Math.random() * topics.length)];
+          focusSpan.textContent = randomTopic;
+        }
+
+        // Lambda health check Function 
+        var lambdaButton = document.getElementById("lambda-button");
+        if (lambdaButton) {
+          lambdaButton.addEventListener("click", function () {
+            var output = document.getElementById("lambda-output");
+            output.textContent = "Calling Lambda health check API...";
+
+            //  API Gateway Invoke URL
+            var apiUrl = "https://2ps0wydfug.execute-api.eu-west-1.amazonaws.com/system-info";
+
+            fetch(apiUrl)
+              .then(function (response) {
+                if (!response.ok) {
+                  throw new Error("HTTP " + response.status);
+                }
+                return response.json();
+              })
+              .then(function (data) {
+                output.textContent = JSON.stringify(data, null, 2);
+              })
+              .catch(function (error) {
+                output.textContent = "Error calling Lambda API: " + error;
+              });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

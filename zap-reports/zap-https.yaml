@@ -1,0 +1,35 @@
+env:
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    continueOnFailure: false
+    progressToStdout: true
+
+jobs:
+  - type: spider
+    parameters:
+      url: https://waf:8443/
+
+  - type: activeScan
+    parameters:
+      url: https://waf:8443/
+
+  - type: spider
+    parameters:
+      url: https://proxy/https/
+
+  - type: activeScan
+    parameters:
+      url: https://proxy/https/
+
+  - type: passiveScan-wait
+
+  - type: report
+    parameters:
+      template: traditional-json
+      reportDir: /zap/wrk
+      reportFile: zap-https-report.json
+      reportTitle: ZAP HTTPS Report
+    sites:
+      - https://waf:8443/
+      - https://proxy/https/

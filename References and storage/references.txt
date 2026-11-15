@@ -1,0 +1,159 @@
+Docker
+------
+Docker Compose overview
+https://docs.docker.com/compose/
+
+Docker Compose install
+https://docs.docker.com/compose/install/
+
+Docker Compose networking
+https://docs.docker.com/compose/how-tos/networking/
+
+Docker Compose startup order
+https://docs.docker.com/compose/how-tos/startup-order/
+
+Docker Compose CLI reference
+https://docs.docker.com/reference/cli/docker/compose/
+
+Docker Compose file reference / services
+https://docs.docker.com/reference/compose-file/services/
+
+Docker Compose application model
+https://docs.docker.com/compose/intro/compose-application-model/
+
+Docker bind mounts
+https://docs.docker.com/engine/storage/bind-mounts/
+
+Docker bind mounts workshop
+https://docs.docker.com/get-started/workshop/06_bind_mounts/
+
+Docker port publishing
+https://docs.docker.com/engine/network/port-publishing/
+
+Docker CA certificates
+https://docs.docker.com/engine/network/ca-certs/
+
+Docker Official NGINX image
+https://hub.docker.com/_/nginx
+
+NGINX
+-----
+NGINX documentation index
+https://nginx.org/en/docs/
+
+NGINX beginner guide
+https://nginx.org/en/docs/beginners_guide.html
+
+NGINX HTTPS server configuration
+https://nginx.org/en/docs/http/configuring_https_servers.html
+
+NGINX load balancing
+https://nginx.org/en/docs/http/load_balancing.html
+
+NGINX proxy module
+https://nginx.org/en/docs/http/ngx_http_proxy_module.html
+
+NGINX upstream module
+https://nginx.org/en/docs/http/ngx_http_upstream_module.html
+
+NGINX core module
+https://nginx.org/en/docs/http/ngx_http_core_module.html
+
+NGINX index module
+https://nginx.org/en/docs/http/ngx_http_index_module.html
+
+OpenSSL
+-------
+OpenSSL req command
+https://docs.openssl.org/3.5/man1/openssl-req/
+
+OpenSSL req command (newer version)
+https://docs.openssl.org/3.6/man1/openssl-req/
+
+OpenSSL x509 command
+https://docs.openssl.org/3.5/man1/openssl-x509/
+
+OpenSSL genrsa command
+https://docs.openssl.org/3.1/man1/openssl-genrsa/
+
+OpenSSL x509v3 extensions config
+https://docs.openssl.org/3.6/man5/x509v3_config/
+
+OpenSSL x509v3 extensions config (1.1.1)
+https://docs.openssl.org/1.1.1/man5/x509v3_config/
+
+OpenSSL verification options
+https://docs.openssl.org/3.1/man1/openssl-verification-options/
+
+Wireshark / TShark
+------------------
+TShark man page
+https://www.wireshark.org/docs/man-pages/tshark.html
+
+Wireshark man page
+https://www.wireshark.org/docs/man-pages/wireshark.html
+
+Wireshark compose setup:
+https://docs.linuxserver.io/images/docker-wireshark/?utm_source=chatgpt.com#advanced-configuration
+
+Capture / TShark core
+
+https://www.wireshark.org/docs/man-pages/tshark.html
+
+https://www.wireshark.org/docs/man-pages/wireshark.html
+
+Filtering / display
+https://www.wireshark.org/docs/wsug_html_chunked/ChCapCaptureFilterSection.html
+
+https://www.wireshark.org/docs/wsug_html_chunked/ChWorkDisplayFilterSection.html
+
+https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html
+
+Docker deployment / running TShark in containers
+https://docs.docker.com/reference/compose-file/services/
+
+https://docs.docker.com/reference/compose-file/networks/
+
+https://docs.docker.com/reference/cli/docker/compose/logs/
+
+https://docs.docker.com/reference/cli/docker/compose/exec/
+
+WAF 
+https://coreruleset.org/docs/index.print
+
+OWASP ZAP
+---------
+ZAP Automation Framework
+https://www.zaproxy.org/docs/automate/automation-framework/
+
+ZAP spider job
+https://www.zaproxy.org/docs/desktop/addons/automation-framework/job-spider/
+
+ZAP passive scan
+https://www.zaproxy.org/docs/desktop/start/features/pscan/
+
+ZAP passiveScan-wait job
+https://www.zaproxy.org/docs/desktop/addons/automation-framework/job-pscanwait/
+
+ZAP activeScan job
+https://www.zaproxy.org/docs/desktop/addons/automation-framework/job-ascan/
+
+ZAP report generation
+https://www.zaproxy.org/docs/desktop/addons/report-generation/
+
+ZAP report job for automation
+https://www.zaproxy.org/docs/desktop/addons/report-generation/automation/
+
+ZAP report templates
+https://www.zaproxy.org/docs/desktop/addons/report-generation/templates/
+
+Hping3
+------
+https://www.hping.org/wiki-sub/home/
+
+hping3 man page
+https://manpages.debian.org/unstable/hping3/hping3.8.en.html
+
+hping3 Kali tools page.
+https://www.kali.org/tools/hping3/
+

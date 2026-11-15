@@ -1,0 +1,22 @@
+# Private keys and local certificates - generate your own (see certs/README.md)
+certs/*
+!certs/README.md
+
+# Raw runtime output - only the small samples are published
+captures/*
+!captures/sample/
+siem/logs/*
+!siem/logs/sample/
+siem/state/
+
+# Personal / non-technical material
+web/html/files/*CV*.pdf
+web/html/images/me.jpg
+References and storage/*
+!References and storage/references.txt
+
+# Misc
+*.db-shm
+*.db-wal
+.env
+web/html/files/Reference1.pdf
